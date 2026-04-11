@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wanasa.club/sitemap.xml
