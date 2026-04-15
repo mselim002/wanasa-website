@@ -141,19 +141,16 @@
         .ph{width:260px;height:530px;background:#151528;border-radius:36px;border:2.5px solid rgba(255,255,255,.08);box-shadow:0 25px 70px rgba(0,0,0,.5),0 0 50px rgba(245,158,11,.08);position:relative;overflow:hidden;transform:perspective(900px) rotateY(-5deg) rotateX(2deg);transition:.5s}
         .ph:hover{transform:perspective(900px) rotateY(0) rotateX(0)}
         .pn{position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:24px;background:#0a0a18;border-radius:0 0 16px 16px;z-index:10}
-        .ps{position:absolute;top:10px;left:10px;right:10px;bottom:10px;background:var(--bg);border-radius:28px;overflow:hidden;padding:36px 14px 14px}
-        .ps .sh{text-align:center;margin-bottom:16px}
-        .ps .sh h3{font-size:16px;font-weight:800;color:var(--amber)}
-        .ps .sh p{font-size:10px;color:var(--t3);margin:0}
-        .sm{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;margin-bottom:14px}
-        .mc{background:var(--bg3);padding:3px 9px;border-radius:16px;font-size:10px;color:var(--t2)}
-        .mc.a{background:var(--amber-g);color:var(--amber);border:1px solid rgba(245,158,11,.25)}
-        .sb{width:100%;background:linear-gradient(135deg,var(--amber),var(--pink));border:none;border-radius:14px;padding:12px;color:#000;font-weight:800;font-size:14px;font-family:inherit;margin-bottom:14px}
-        .cp{background:var(--bg3);border-radius:10px;padding:9px;margin-bottom:6px}
-        .cph{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
-        .cpn{font-size:12px;font-weight:700;color:var(--amber)}
-        .cpt{font-size:9px;color:var(--t3)}
-        .cpm{font-size:10px;color:var(--t2)}
+        .ps{position:absolute;top:10px;left:10px;right:10px;bottom:10px;background:var(--bg);border-radius:28px;overflow:hidden}
+        .ps img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
+
+        /* Screenshots gallery */
+        .shg{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:20px}
+        .shp{width:100%;max-width:240px;aspect-ratio:260/530;margin:0 auto;background:#151528;border-radius:32px;border:2px solid rgba(255,255,255,.08);box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 40px rgba(245,158,11,.06);position:relative;overflow:hidden;transition:.4s}
+        .shp:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,.55),0 0 50px rgba(245,158,11,.1)}
+        .shp::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:42%;height:20px;background:#0a0a18;border-radius:0 0 14px 14px;z-index:2}
+        .shp img{position:absolute;inset:8px;width:calc(100% - 16px);height:calc(100% - 16px);border-radius:24px;object-fit:cover;object-position:top center;display:block}
+        .shcap{text-align:center;margin-top:14px;font-size:13px;color:var(--t2);font-weight:600}
 
         /* Stats */
         .stb{position:relative;z-index:1;padding:0 24px;margin-top:-30px;margin-bottom:50px}
@@ -285,12 +282,14 @@
             .fg{grid-template-columns:repeat(2,1fr)}
             .sc{grid-template-columns:repeat(2,1fr)}
             .ftg{grid-template-columns:repeat(2,1fr)}
+            .shg{grid-template-columns:repeat(2,1fr);gap:24px}
         }
         @media(max-width:768px){
             .nk{display:none}
             .nk.open{display:flex;flex-direction:column;position:absolute;top:68px;right:0;left:0;background:rgba(12,15,26,.98);padding:16px;gap:14px;border-bottom:1px solid var(--brd)}
             .mm{display:block}
             .fg,.tmg{grid-template-columns:1fr}
+            .shg{grid-template-columns:repeat(2,1fr);gap:20px}
             .sc{grid-template-columns:1fr}
             .tg{grid-template-columns:1fr}
             .sti{grid-template-columns:repeat(2,1fr)}
@@ -322,6 +321,7 @@
         </a>
         <ul class="nk" id="navLinks">
             <li><a href="#features" onclick="showMain()">المميزات</a></li>
+            <li><a href="#screenshots" onclick="showMain()">لقطات</a></li>
             <li><a href="#how" onclick="showMain()">كيف يعمل</a></li>
             <li><a href="#safety" onclick="showMain()">الأمان</a></li>
             <li><a href="#faq" onclick="showMain()">الأسئلة</a></li>
@@ -350,22 +350,7 @@
             <div class="ph">
                 <div class="pn"></div>
                 <div class="ps">
-                    <div class="sh"><h3>🎭 وناسة</h3><p>كيف حالك اليوم؟</p></div>
-                    <div class="sm">
-                        <span class="mc a">😊 مبسوط</span>
-                        <span class="mc">😴 طفشان</span>
-                        <span class="mc">🤔 متأمل</span>
-                        <span class="mc">🔥 حماس</span>
-                    </div>
-                    <button class="sb">🔍 ابحث عن وناس</button>
-                    <div class="cp">
-                        <div class="cph"><span class="cpn">🎭 وناس جديد</span><span class="cpt">الآن</span></div>
-                        <div class="cpm">هلا! شفت إنك تحب الألعاب 🎮</div>
-                    </div>
-                    <div class="cp">
-                        <div class="cph"><span class="cpn">📞 صديق مقرّب</span><span class="cpt">٥ د</span></div>
-                        <div class="cpm">وش رأيك نسوي كول؟ 🔥</div>
-                    </div>
+                    <img src="assets/screenshots/Screenshot_20260415-000803~2.png" alt="الشاشة الرئيسية لتطبيق وناسة — اختيار المزاج والبحث عن وناس" width="1080" height="2020" fetchpriority="high" decoding="async">
                 </div>
             </div>
         </div>
@@ -402,6 +387,33 @@
             <div class="fc fi2"><div class="fi pu">🎤</div><h3>رسائل صوتية</h3><p>سجّل رسالة صوتية وأرسلها لأصدقائك. اضغط، سجّل، أرسل — بكل سهولة.</p></div>
             <div class="fc fi2"><div class="fi pk">💬</div><h3>كسر الجليد</h3><p>مو عارف تبدأ المحادثة؟ وناسة يقترح لك أسئلة ذكية بناءً على اهتماماتكم المشتركة.</p></div>
             <div class="fc fi2"><div class="fi gr">💎</div><h3>نظام جواهر</h3><p>50 جوهرة مجانية عند التسجيل. استخدمها للفلاتر والبوست. باقات بأسعار محلية لكل دولة.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section id="screenshots">
+    <div class="si" style="text-align:center">
+        <div class="sl fi2">لقطات من التطبيق</div>
+        <h2 class="stit fi2">شوف وناسة <span class="hl">من جوّا</span></h2>
+        <p class="sd fi2" style="margin:0 auto 40px">تصميم عربي أنيق — RTL كامل، وضع داكن مريح، وتجربة سلسة.</p>
+        <div class="shg">
+            <div class="fi2">
+                <div class="shp"><img src="assets/screenshots/Screenshot_20260415-000913~2.png" alt="فلاتر البحث — جنس وبلد وفئة عمرية" width="1080" height="2020" loading="lazy" decoding="async"></div>
+                <div class="shcap">🎯 فلاتر بحث متقدمة</div>
+            </div>
+            <div class="fi2">
+                <div class="shp"><img src="assets/screenshots/Screenshot_20260415-005415~2.png" alt="شاشة العضوية الذهبية Gold في وناسة" width="1080" height="2020" loading="lazy" decoding="async"></div>
+                <div class="shcap">⭐ العضوية الذهبية</div>
+            </div>
+            <div class="fi2">
+                <div class="shp"><img src="assets/screenshots/Screenshot_20260415-005449~2.png" alt="شاشة البوست Boost — أولوية المطابقة" width="1080" height="2020" loading="lazy" decoding="async"></div>
+                <div class="shcap">⚡ Boost للمطابقة السريعة</div>
+            </div>
+            <div class="fi2">
+                <div class="shp"><img src="assets/screenshots/Screenshot_20260414-233254.png" alt="متجر المجوهرات — باقات جواهر بأسعار محلية" width="1080" height="2020" loading="lazy" decoding="async"></div>
+                <div class="shcap">💎 متجر المجوهرات</div>
+            </div>
         </div>
     </div>
 </section>
