@@ -32,7 +32,9 @@
     <meta name="theme-color" content="#0C0F1A">
     <meta name="apple-mobile-web-app-title" content="وناسة">
     <link rel="alternate" hreflang="ar" href="https://wanasa.club/">
-    
+    <link rel="alternate" hreflang="en" href="https://wanasa.club/en/">
+    <link rel="alternate" hreflang="x-default" href="https://wanasa.club/">
+
     <!-- STRUCTURED DATA -->
     <script type="application/ld+json">
     {
@@ -117,6 +119,8 @@
         .nk a::after{content:'';position:absolute;bottom:-3px;right:0;width:0;height:2px;background:var(--amber);transition:.3s}
         .nk a:hover::after{width:100%}
         .nc{background:linear-gradient(135deg,var(--amber),#D97706);color:#000!important;padding:9px 22px;border-radius:50px;font-weight:700;font-size:13px;white-space:nowrap}
+        .nlang{background:var(--bg3);border:1px solid rgba(245,158,11,0.3);color:var(--amber)!important;padding:6px 14px;border-radius:20px;font-size:12px;white-space:nowrap}
+        .nlang::after{display:none!important}
         .nk a{white-space:nowrap}
         .nc::after{display:none!important}
         .nc:hover{filter:brightness(1.1)}
@@ -328,6 +332,7 @@
             <li><a href="#how" onclick="showMain()">كيف يعمل</a></li>
             <li><a href="#safety" onclick="showMain()">الأمان</a></li>
             <li><a href="#faq" onclick="showMain()">الأسئلة</a></li>
+            <li><a href="/en/" class="nlang">🌐 English</a></li>
             <li><a href="#download" class="nc">حمّل التطبيق</a></li>
         </ul>
         <button class="mm" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
