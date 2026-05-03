@@ -315,6 +315,36 @@
         /* Page visibility */
         #mainPage{display:block}
         #mainPage.hidden{display:none}
+
+        /* Roadmap */
+        .rdg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+        .rdc{background:var(--bg3);border:1px solid var(--brd);border-radius:var(--r);padding:28px;position:relative;overflow:hidden;transition:.3s}
+        .rdc:hover{transform:translateY(-4px);border-color:rgba(245,158,11,.25);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+        .rdc::before{content:'';position:absolute;top:0;right:0;left:0;height:3px}
+        .rdc.ph1::before{background:linear-gradient(90deg,var(--green),#34D399)}
+        .rdc.ph2::before{background:linear-gradient(90deg,var(--amber),var(--amber-l))}
+        .rdc.ph3::before{background:linear-gradient(90deg,var(--pink),#F472B6)}
+        .rdc.ph4::before{background:linear-gradient(90deg,var(--purple),#A78BFA)}
+        .rdc.ph5::before{background:linear-gradient(90deg,#3B82F6,#60A5FA)}
+        .rdb{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700;margin-bottom:14px}
+        .rdb.now{background:rgba(16,185,129,.15);color:var(--green);border:1px solid rgba(16,185,129,.25)}
+        .rdb.soon{background:rgba(245,158,11,.12);color:var(--amber);border:1px solid rgba(245,158,11,.2)}
+        .rdb.later{background:rgba(139,92,246,.12);color:var(--purple);border:1px solid rgba(139,92,246,.2)}
+        .rdh{font-family:'Noto Kufi Arabic',sans-serif;font-size:16px;font-weight:800;color:var(--t1);margin-bottom:6px}
+        .rds{font-size:12px;color:var(--t3);margin-bottom:16px}
+        .rdf{list-style:none;display:flex;flex-direction:column;gap:9px}
+        .rdf li{font-size:13px;color:var(--t2);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+        .rdf li::before{content:'←';color:var(--amber);font-size:11px;margin-top:3px;flex-shrink:0}
+        .rdc.ph2 .rdf li::before{color:var(--amber)}
+        .rdc.ph3 .rdf li::before{color:var(--pink)}
+        .rdc.ph4 .rdf li::before{color:var(--purple)}
+        .rdc.ph5 .rdf li::before{color:#3B82F6}
+        .rdc.ph1 .rdf li::before{color:var(--green)}
+        .rdpg{display:flex;gap:12px;margin-top:40px;justify-content:center;flex-wrap:wrap}
+        .rdpi{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--t2)}
+        .rdpd{width:28px;height:4px;border-radius:4px}
+        @media(max-width:900px){.rdg{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:600px){.rdg{grid-template-columns:1fr}}
     </style>
 </head>
 <body>
@@ -333,6 +363,7 @@
             <li><a href="#screenshots" onclick="showMain()">لقطات</a></li>
             <li><a href="#how" onclick="showMain()">كيف يعمل</a></li>
             <li><a href="#safety" onclick="showMain()">الأمان</a></li>
+            <li><a href="#roadmap" onclick="showMain()">خارطة الطريق</a></li>
             <li><a href="#faq" onclick="showMain()">الأسئلة</a></li>
             <li><a href="/en/" class="nlang">🌐 English</a></li>
             <li><a href="#download" class="nc">حمّل التطبيق</a></li>
@@ -481,6 +512,88 @@
                 <div class="tms">⭐⭐⭐⭐⭐</div>
                 <p class="tmt">نظام الكارما رهيب! تحس إن الناس محترمة لأنهم يبون يحافظون على تقييمهم. بيئة نظيفة جداً.</p>
                 <div class="tma"><div class="tmav">🎵</div><div><div class="tman">وناس من الكويت</div><div class="tmac">🇰🇼 الكويت</div></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap" style="background:var(--bg2)">
+    <div class="si">
+        <div style="text-align:center">
+            <div class="sl fi2">خارطة الطريق</div>
+            <h2 class="stit fi2">مستقبل <span class="hl">وناسة</span></h2>
+            <p class="sd fi2" style="margin:0 auto 10px">خطتنا لتطوير التطبيق — شفافية كاملة مع مجتمعنا.</p>
+        </div>
+        <div class="rdpg fi2">
+            <div class="rdpi"><div class="rdpd" style="background:var(--green)"></div>الآن</div>
+            <div class="rdpi"><div class="rdpd" style="background:var(--amber)"></div>شهر 1</div>
+            <div class="rdpi"><div class="rdpd" style="background:var(--pink)"></div>شهر 2-3</div>
+            <div class="rdpi"><div class="rdpd" style="background:var(--purple)"></div>شهر 4-5</div>
+            <div class="rdpi"><div class="rdpd" style="background:#3B82F6"></div>6+ أشهر</div>
+        </div>
+        <div class="rdg">
+            <div class="rdc ph1 fi2">
+                <div class="rdb now">🟢 الآن</div>
+                <div class="rdh">الاستقرار والنمو</div>
+                <div class="rds">نشر على iOS + Android 15</div>
+                <ul class="rdf">
+                    <li>إصلاح Android 15 وبناء جديد</li>
+                    <li>موافقة Apple على iOS</li>
+                    <li>إشعارات يومية للمستخدمين</li>
+                    <li>إصلاح تحذيرات Google Play</li>
+                </ul>
+            </div>
+            <div class="rdc ph2 fi2">
+                <div class="rdb soon">🟡 شهر 1</div>
+                <div class="rdh">النمو العضوي</div>
+                <div class="rds">من 47 → 500 مستخدم</div>
+                <ul class="rdf">
+                    <li>زر مشاركة التطبيق native share</li>
+                    <li>نظام دعوة الأصدقاء بكود شخصي</li>
+                    <li>Quick Replies في بداية المحادثة</li>
+                    <li>عداد "متصلين الآن" في الرئيسية</li>
+                </ul>
+            </div>
+            <div class="rdc ph3 fi2">
+                <div class="rdb soon" style="background:rgba(236,72,153,.12);color:var(--pink);border-color:rgba(236,72,153,.2)">🌸 شهر 2-3</div>
+                <div class="rdh">تجربة أفضل</div>
+                <div class="rds">زيادة الـ retention</div>
+                <ul class="rdf">
+                    <li>ردود إيموجي على الرسائل</li>
+                    <li>موضوع اليوم — ice-breaker يومي</li>
+                    <li>Mood matching ذكي</li>
+                    <li>صور مؤقتة تحذف بعد المشاهدة</li>
+                    <li>تحديات يومية + جواهر مكافأة</li>
+                </ul>
+            </div>
+            <div class="rdc ph4 fi2">
+                <div class="rdb later">⚡ شهر 4-5</div>
+                <div class="rdh">Gamification والإيرادات</div>
+                <div class="rds">$1,000+ شهرياً</div>
+                <ul class="rdf">
+                    <li>شارات الإنجاز في الملف الشخصي</li>
+                    <li>Leaderboard أسبوعي للأكثر نشاطاً</li>
+                    <li>هدايا افتراضية 🌹🎁 بالجواهر</li>
+                    <li>Diamond VIP بمزايا حصرية</li>
+                    <li>غرف الاهتمامات الجماعية</li>
+                </ul>
+            </div>
+            <div class="rdc ph5 fi2">
+                <div class="rdb later" style="background:rgba(59,130,246,.12);color:#60A5FA;border-color:rgba(59,130,246,.2)">🚀 6+ أشهر</div>
+                <div class="rdh">التوسع</div>
+                <div class="rds">نسخة جديدة من وناسة</div>
+                <ul class="rdf">
+                    <li>وناسة Stories — حالات 24 ساعة</li>
+                    <li>وناسة Lite للأجهزة الضعيفة</li>
+                    <li>ترجمة فورية عربي ↔ إنجليزي</li>
+                    <li>نسخة الويب للكمبيوتر</li>
+                </ul>
+            </div>
+            <div class="rdc fi2" style="background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(236,72,153,.08));border-color:rgba(245,158,11,.2);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:12px;min-height:200px">
+                <div style="font-size:36px">💡</div>
+                <div class="rdh">عندك فكرة؟</div>
+                <p style="font-size:13px;color:var(--t2);line-height:1.6">شاركنا أفكارك من داخل التطبيق واحصل على <span style="color:var(--amber);font-weight:700">200 جوهرة</span> إذا تم اعتمادها!</p>
             </div>
         </div>
     </div>
